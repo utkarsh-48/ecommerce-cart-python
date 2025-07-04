@@ -35,7 +35,7 @@ This project allows users to register, log in, browse products, manage a shoppin
 
 ---
 
-## 🛠Tech Stack
+## Tech Stack
 
 * **Language**: Python 3
 * **Storage**: JSON files (for users and product data)
