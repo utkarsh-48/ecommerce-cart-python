@@ -1,0 +1,5 @@
+{
+  "user1": [
+    {"id": 1, "name": "Apple", "quantity": 2, "price": 1.0}
+  ]
+}
