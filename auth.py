@@ -1,6 +1,6 @@
 import json
 import os
-import getpass
+
 def load_users():
     if os.path.exists("users.json"):
         with open("users.json","r") as f:
@@ -22,7 +22,7 @@ def register():
             continue
         else:
            while True:
-            password = getpass.getpass("Enter Password: ").strip()
+            password = input("Enter Password: ").strip()
             if not password:
                  print("Password can`t be empty")
             else:
@@ -34,7 +34,7 @@ def register():
 def login():
     users = load_users()
     username = input("Enter Your Username: ")
-    password = getpass.getpass("Enter Your Password: ")
+    password = input("Enter Your Password: ")
     if username in users and users[username]["password"] == password:
         print(f"Welcome Back {username}")
         return username
