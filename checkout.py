@@ -1,4 +1,4 @@
-def checkout(cart,username):
+def checkout(cart):
    if not cart:
        print("Your Cart is empty")
        return

@@ -3,7 +3,7 @@ import csv
 
 def load_products(filename):
     products = []
-    with open("prod.csv", "r") as f:
+    with open(filename, "r") as f:
         reader = csv.DictReader(f)
         for row in reader:
             products.append(
