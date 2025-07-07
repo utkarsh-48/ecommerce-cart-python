@@ -2,14 +2,16 @@ import json
 import os
 cart_file = "cart_data.json"
 
-def load_cart_data():
+def load_data():
     if os.path.exists(cart_file):
-        with open("cart_file","r") as f:
+        with open(cart_file,"r") as f:
             return json.load(f)
     return {}
 def save_data(data):
-    with open("cart_file","w") as f:
+    with open(cart_file,"w") as f:
+         print('Saving cart...')
          json.dump(data,f,indent=2)
+         print('Cart saved!')
 
 
 
@@ -17,7 +19,7 @@ def add_cart(cart,products):
     try:
         prod_id = int(input("Enter Product Id: "))
         quantity = int(input("Enter the quantity "))
-        if quantity == 0:
+        if quantity <1:
             print("Quantity can`t be less than 1")
             return
         product = next(p for p in products if p ["id"] == prod_id)
@@ -27,7 +29,7 @@ def add_cart(cart,products):
         for item in cart:
             if item["id"] == prod_id:
                 item["quantity"]+=quantity
-                print(f"Updated the {item("name")} to quantity {item['quantity']}")
+                print(f"Updated the {item["name"]} to quantity {item['quantity']}")
         cart.append({
             "id": product["id"],
             "name": product["name"],
