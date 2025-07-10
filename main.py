@@ -11,10 +11,14 @@ def main():
 
     # Login/Sign Up
     while True:
-        print("\n1.Login "
+        print("\n1. Login "
               "2. Create Account "
               "3. Exit")
-        auth_option = int(input("Choose a option: "))
+        try:
+            auth_option = int(input("Choose an option: "))
+        except ValueError:
+            print("Invalid input. Try again.")
+            continue
         if auth_option == 1:
             user = login()
             if user:
@@ -27,8 +31,8 @@ def main():
             exit()
         else:
             print("Invalid input. Try again.")
-    # Shopping
 
+    # Shopping
     while True:
         print(f"\nLogged in as {user}")
         print("1. View Products")
@@ -42,21 +46,21 @@ def main():
 
         if choice == "1":
             for p in products:
-                print(f"{p['id']}: {p['name']} - ₹{p['price']} | {p['description']}")
+                print(f"{p['id']}: {p['name']} - ₹{p['price']:.2f} | {p['description']}")
         elif choice == "2":
-            add_cart(cart,products)
+            add_cart(cart, products)
         elif choice == "3":
             remove_cart(cart)
         elif choice == "4":
             view_cart(cart)
         elif choice == "5":
-            checkout(cart,user)
+            checkout(cart, user)
         elif choice == "6":
-            print(f" Goodbye {user} ")
+            print(f"Goodbye {user}")
+            cart.clear()
             break
         else:
             print("Invalid option. Try again.")
-
 
 if __name__ == "__main__":
     main()

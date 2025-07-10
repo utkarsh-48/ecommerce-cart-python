@@ -1,1 +1,8 @@
-{"shadow": {"password": "abc123"}, "user2": {"password": "xyz789"}, "shadow123": {"password": "abc1234"}, "shadoq11": {"password": "utjk"}, "shadow122": {"password": "shadow122"}, "uuuu": {"password": ""}, "shadow2222": {"password": "22222"}, "shadow11112": {"password": "1234"}, "ukl": {"password": "ukl123"}, "shadow1222": {"password": "22222"}, "shadow112": {"password": "1234"}, "shadow111": {"password": "1111"}, "shadow12345": {"password": "12345"}}
+{
+  "shadow": {
+    "password": "abc123"
+  },
+  "user2": {
+    "password": "xyz789"
+  }
+}
